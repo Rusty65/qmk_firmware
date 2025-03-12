@@ -237,10 +237,10 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 
 // When you add source files to SRC in rules.mk, you can use functions.
 const char *read_layer_state(void);
-const char *read_logo(void);
-void set_keylog(uint16_t keycode, keyrecord_t *record);
-const char *read_keylog(void);
-const char *read_keylogs(void);
+//const char *read_logo(void);
+//void set_keylog(uint16_t keycode, keyrecord_t *record);
+//const char *read_keylog(void);
+//const char *read_keylogs(void);
 
 const char *read_mode_icon(bool swap);
 const char *read_host_led_state(void);
