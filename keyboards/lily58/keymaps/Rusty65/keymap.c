@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |   ~  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  -   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |  ESC |A/shft|S/gui |D/alt |F/ctrl|G/NAV |-------.    ,-------|   H  |J/ctrl|K/alt |L/gui |;/shft|  '   |
+ * |ESC/shf|A/shft|S/gui |D/alt |F/ctrl|G/NAV|-------.    ,-------|   H  |J/ctrl|K/alt |L/gui |;/shft|  '   |
  * |------+------+------+------+------+------| Vol-  |    | Vol+  |------+------+------+------+------+------|
  * |   \  |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |  +   |
  * `-----------------------------------------/NUMBERS/     \SYMBOLS\-----------------------------------------'
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT( \
     KC_HOME,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_END, \
     KC_GRV,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_MINS, \
-    KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LT(_NAVIGATION,KC_G),  KC_H, RCTL_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), RSFT_T(KC_SCLN), KC_QUOT, \
+    LSFT_T(KC_ESC), LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LT(_NAVIGATION,KC_G),  KC_H, RCTL_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), RSFT_T(KC_SCLN), KC_QUOT, \
     KC_BSLS,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_VOLD,    KC_VOLU,    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_PLUS, \
                                         KC_UP,      KC_DOWN,    MO(_SYMBOLS),LT(_NUMBERS,KC_TAB),LT(_SYMBOLS,KC_SPC),MO(_NUMBERS),KC_LEFT,    KC_RGHT
 ),
@@ -190,7 +190,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 //SSD1306 OLED update loop, make sure to enable OLED_ENABLE=yes in rules.mk
-#ifdef OLED_ENABLE
+//#ifdef OLED_ENABLE
 
 // WPM-responsive animation stuff here
 #    define IDLE_FRAMES 5
@@ -327,7 +327,7 @@ bool oled_task_user(void) {
   }
     return false;
 }
-#endif // OLED_ENABLE
+//#endif // OLED_ENABLE
 
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //   if (record->event.pressed) {
