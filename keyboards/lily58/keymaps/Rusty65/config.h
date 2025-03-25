@@ -39,11 +39,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //Adding definitions for 'WPM calcs
 #define SPLIT_WPM_ENABLE
-#define WPM_ESTIMATED_WORD_SIZE	5
-//#define WPM_ALLOW_COUNT_REGRESSION
+//#define WPM_ESTIMATED_WORD_SIZE	5
+#define WPM_ALLOW_COUNT_REGRESSION
 //WPM_UNFILTERED	Not defined	If undefined (the default), WPM values will be smoothed to avoid sudden changes in value
-#define WPM_SAMPLE_SECONDS	5
-#define WPM_SAMPLE_PERIODS	25
+//#define WPM_SAMPLE_SECONDS	5
+//#define WPM_SAMPLE_PERIODS	25
 
 
 

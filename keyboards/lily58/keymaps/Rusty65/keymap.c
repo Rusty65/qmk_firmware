@@ -316,7 +316,7 @@ bool oled_task_user(void) {
     oled_write_ln(read_mode_icon(keymap_config.swap_lctl_lgui), false); //Show the Apple or windows icon based on the ctrl/gui swap
     //oled_write_ln(read_host_led_state(), false);
     //oled_write_ln(read_timelog(), false);
-    oled_write(get_u8_str(get_current_wpm(), '0'), false);
+    sprintf(wpm_str, "WPM:%03d", get_current_wpm());
   } else {
     //oled_write(read_logo(), false);
     //oled_write(read_logo(), false);
@@ -324,7 +324,7 @@ bool oled_task_user(void) {
 
     oled_set_cursor(0, 0);                            // sets cursor to (row, column) using charactar spacing (5 rows on 128x32 screen, anything more will overflow back to the top)
     sprintf(wpm_str, "WPM:%03d", get_current_wpm());  // edit the string to change wwhat shows up, edit %03d to change how many digits show up
-    oled_write(get_u8_str(get_current_wpm(), '0'), false);                      // writes wpm on top left corner of string
+    //oled_write(get_u8_str("WPM:"get_current_wpm(), '0'), false);                      // writes wpm on top left corner of string
   }
     return false;
 }
