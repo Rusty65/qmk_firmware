@@ -1,7 +1,7 @@
 
 LTO_ENABLE = yes            # Link Time Optimization enabled
 TRI_LAYER_ENABLE = yes
-TAP_DANCE_ENABLE = yes		#Allow tapping keys to do something
+TAP_DANCE_ENABLE = no		#Allow tapping keys to do something
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = no      	# Mouse keys
 EXTRAKEY_ENABLE = yes      	# Audio control and System control

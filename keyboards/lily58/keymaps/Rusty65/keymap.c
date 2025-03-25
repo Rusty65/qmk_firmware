@@ -20,57 +20,57 @@ enum layer_number {
 };
 
 
-//Tap Dance custom calls
-enum {
-    TD_G_NAV,
-};
+// //Tap Dance custom calls
+// enum {
+//     TD_G_NAV,
+// };
 
-// Tap Dance definitions
-tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_G_NAV] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_G, _NAVIGATION),
-};
+// // Tap Dance definitions
+// tap_dance_action_t tap_dance_actions[] = {
+//     // Tap once for Escape, twice for Caps Lock
+//     [TD_G_NAV] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_G, _NAVIGATION),
+// };
 
-// Macro Definitions
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-    case FCOPY:
-        if (record->event.pressed) {
-            // when keycode QMKBEST is pressed
-            if (keymap_config.swap_lctl_lgui){
-                SEND_STRING(SS_LGUI("c")); // GUI-V
-            } else {
-                SEND_STRING(SS_LCTL("c")); // Ctrl-V
-            }
-        } else {
-            // when keycode QMKBEST is released
-        }
-        break;
+// // Macro Definitions
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//     case FCOPY:
+//         if (record->event.pressed) {
+//             // when keycode QMKBEST is pressed
+//             if (keymap_config.swap_lctl_lgui){
+//                 SEND_STRING(SS_LGUI("c")); // GUI-V
+//             } else {
+//                 SEND_STRING(SS_LCTL("c")); // Ctrl-V
+//             }
+//         } else {
+//             // when keycode QMKBEST is released
+//         }
+//         break;
 
-    case FPASTE:
-        if (record->event.pressed) {
-            if (keymap_config.swap_lctl_lgui){
-                SEND_STRING(SS_LGUI("v")); // GUI-V
-            } else {
-                SEND_STRING(SS_LCTL("v")); // Ctrl-V
-            }
-        } else {
-            // when keycode QMKURL is released
-        }
-        break;
+//     case FPASTE:
+//         if (record->event.pressed) {
+//             if (keymap_config.swap_lctl_lgui){
+//                 SEND_STRING(SS_LGUI("v")); // GUI-V
+//             } else {
+//                 SEND_STRING(SS_LCTL("v")); // Ctrl-V
+//             }
+//         } else {
+//             // when keycode QMKURL is released
+//         }
+//         break;
 
-    case FCUT:
-        if (record->event.pressed) {
-            if (keymap_config.swap_lctl_lgui){
-                SEND_STRING(SS_LGUI("x")); // GUI-X
-            } else {
-                SEND_STRING(SS_LCTL("x")); // Ctrl-X
-            }
-        }
-        break;
-    }
-    return true;
-};
+//     case FCUT:
+//         if (record->event.pressed) {
+//             if (keymap_config.swap_lctl_lgui){
+//                 SEND_STRING(SS_LGUI("x")); // GUI-X
+//             } else {
+//                 SEND_STRING(SS_LCTL("x")); // Ctrl-X
+//             }
+//         }
+//         break;
+//     }
+//     return true;
+// };
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -115,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LCBR,    KC_RCBR,    XXXXXXX, \
     XXXXXXX,    KC_EXLM,    KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,                            KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RPRN,    KC_TILD, \
-    XXXXXXX,    XXXXXXX,    FCUT,       FCOPY,      FPASTE,     XXXXXXX,    KC_MUTE,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    LSFT(KC_LCBR),    LSFT(KC_RCBR),    XXXXXXX, \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_MUTE,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    LSFT(KC_LCBR),    LSFT(KC_RCBR),    XXXXXXX, \
                                         _______,    _______,    XXXXXXX,    KC_BSPC,    _______,    XXXXXXX,    _______,    _______
 ),
 /* NUMBERS
@@ -158,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NAVIGATION] = LAYOUT( \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, \
-    _______, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, TO(_QWERTY),                 KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  XXXXXXX, \
+    _______, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, _______,                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______, _______,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                _______, _______, _______,  _______, _______,  _______, _______, _______ \
   ),
