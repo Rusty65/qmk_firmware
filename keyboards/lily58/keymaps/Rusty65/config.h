@@ -35,6 +35,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM_PER_KEY
 #define LAYER_LOCK_IDLE_TIMEOUT 60000  // Turn off after 60 seconds.
 
+//Adding definitions for 'WPM calcs
+#define WPM_ESTIMATED_WORD_SIZE	5
+#define WPM_ALLOW_COUNT_REGRESSION
+//WPM_UNFILTERED	Not defined	If undefined (the default), WPM values will be smoothed to avoid sudden changes in value
+#define WPM_SAMPLE_SECONDS	5
+#define WPM_SAMPLE_PERIODS	25
+
+
 
 // #undef RGBLIGHT_LED_COUNT
 // #define RGBLIGHT_EFFECT_BREATHING
