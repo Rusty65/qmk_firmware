@@ -23,7 +23,7 @@ const char *read_layer_state(void) {
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: NUMBERS");
     break;
   case L_NAVIGATION:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: NAVIGATION");
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: NAVIAGTION");
     break;
   case L_ADJUST:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: ADJUST");
