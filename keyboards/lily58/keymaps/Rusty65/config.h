@@ -21,8 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 /* Attempting to reduce size */
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
+//#define NO_ACTION_MACRO
+//#define NO_ACTION_FUNCTION
 
 /* Select hand configuration */
 #define MASTER_LEFT
@@ -33,11 +33,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
-#define LAYER_LOCK_IDLE_TIMEOUT 60000  // Turn off after 60 seconds.
+
+//layer lock config
+#define LAYER_LOCK_IDLE_TIMEOUT 60000
 
 //Adding definitions for 'WPM calcs
+#define SPLIT_WPM_ENABLE
 #define WPM_ESTIMATED_WORD_SIZE	5
-#define WPM_ALLOW_COUNT_REGRESSION
+//#define WPM_ALLOW_COUNT_REGRESSION
 //WPM_UNFILTERED	Not defined	If undefined (the default), WPM values will be smoothed to avoid sudden changes in value
 #define WPM_SAMPLE_SECONDS	5
 #define WPM_SAMPLE_PERIODS	25
