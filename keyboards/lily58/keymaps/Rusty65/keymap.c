@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [_QWERTY] = LAYOUT( \
     KC_HOME,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_END, \
     KC_GRV,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_MINS, \
-    KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), TD(TD_G_NAV),  KC_H, RCTL_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), RSFT_T(KC_SCLN), KC_QUOT, \
+    KC_ESC, LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LT(_NAVIGATION,KC_G),  KC_H, RCTL_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), RSFT_T(KC_SCLN), KC_QUOT, \
     KC_BSLS,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_VOLD,    KC_VOLU,    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_PLUS, \
                                         KC_UP,      KC_DOWN,    MO(_SYMBOLS),LT(_NUMBERS,KC_TAB),LT(_SYMBOLS,KC_SPC),MO(_NUMBERS),KC_LEFT,    KC_RGHT
 ),
