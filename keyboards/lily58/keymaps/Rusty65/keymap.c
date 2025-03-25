@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |   ~  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |  -   |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |  ESC |A/shft|S/gui |D/alt |F/ctrl|G/dtNAV|-------.   ,-------|   H  |J/ctrl|K/alt |L/gui |;/shft|  '   |
+ * |  ESC |A/shft|S/gui |D/alt |F/ctrl|G/NAV |-------.    ,-------|   H  |J/ctrl|K/alt |L/gui |;/shft|  '   |
  * |------+------+------+------+------+------| Vol-  |    | Vol+  |------+------+------+------+------+------|
  * |   \  |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |  +   |
  * `-----------------------------------------/NUMBERS/     \SYMBOLS\-----------------------------------------'
@@ -104,8 +104,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |                    |      |      |      |   [  |   ]  |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |   !  |   @  |   #  |   $  |   %  |-------.    ,-------|   ^  |   &  |   *  |   (  |   )  |      |
- * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
- * |      |      | FCUT |FCOPY |FPASTE|      |-------|    |-------|      |      |      |   {  |   }  |      |
+ * |------+------+------+------+------+------|  DEL  |    |       |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------|    |-------|      |      |      |   {  |   }  |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   |      |      |      | /BKSPC  /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
@@ -115,8 +115,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LCBR,    KC_RCBR,    XXXXXXX, \
     XXXXXXX,    KC_EXLM,    KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,                            KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RPRN,    KC_TILD, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_MUTE,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    LSFT(KC_LCBR),    LSFT(KC_RCBR),    XXXXXXX, \
-                                        _______,    _______,    XXXXXXX,    KC_BSPC,    _______,    XXXXXXX,    _______,    _______
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_DEL,     _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    LSFT(KC_LCBR),    LSFT(KC_RCBR),    XXXXXXX, \
+                                        _______,    _______,    _______,    KC_BSPC,    _______,    _______,    _______,    _______
 ),
 /* NUMBERS
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |   1  |   2  |   3  |   4  |   5  |-------.    ,-------|   6  |   7  |   8  |   9  |   0  |      |
- * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
+ * |------+------+------+------+------+------|       |    | MUTE  |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   |      |      |      | /       /       \Enter \  |      |      |      |
@@ -137,8 +137,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX, \
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______,  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-                               _______, _______, XXXXXXX,  _______,  KC_ENT,  XXXXXXX, _______, _______ \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______,  KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+                               _______, _______, _______,  _______,  KC_ENT,  _______, _______, _______ \
   ),
   /* NAVIGATION
    * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -146,7 +146,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
    * |      |      |      |      |      |      |                    |      | PGUP |  UP  | PGDN |      |      |
    * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-   * |      | SHIFT|  GUI |  ALT | CTRL |QWERTY|-------.    ,-------| HOME | LEFT | DOWN | RIGHT| END  |      |
+   * |      | SHIFT|  GUI |  ALT | CTRL |      |-------.    ,-------| HOME | LEFT | DOWN | RIGHT| END  |      |
    * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
    * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
    * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -158,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NAVIGATION] = LAYOUT( \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, \
-    _______, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, _______,                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  XXXXXXX, \
+    _______, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, _______,                     KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______, _______,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                _______, _______, _______,  _______, _______,  _______, _______, _______ \
   ),
@@ -185,9 +185,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _SYMBOLS, _NUMBERS ,_ADJUST);
-  }
+// layer_state_t layer_state_set_user(layer_state_t state) {
+//     return update_tri_layer_state(state, _SYMBOLS, _NUMBERS ,_ADJUST);
+// }
 
 //SSD1306 OLED update loop, make sure to enable OLED_ENABLE=yes in rules.mk
 #ifdef OLED_ENABLE
@@ -202,7 +202,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #    define TAP_SPEED 40  // above this wpm value typing animation to trigger
 
 #    define ANIM_FRAME_DURATION 200  // how long each frame lasts in ms
- #define SLEEP_TIMER 60000 // should sleep after this period of 0 wpm, needs fixing
+// #define SLEEP_TIMER 60000 // should sleep after this period of 0 wpm, needs fixing
 #    define ANIM_SIZE 636  // number of bytes in array, minimize for adequate firmware sizge, max is 1024
 
 uint32_t anim_timer         = 0;

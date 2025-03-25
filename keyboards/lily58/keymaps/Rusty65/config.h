@@ -33,6 +33,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
+#define LAYER_LOCK_IDLE_TIMEOUT 60000  // Turn off after 60 seconds.
+
 
 // #undef RGBLIGHT_LED_COUNT
 // #define RGBLIGHT_EFFECT_BREATHING
