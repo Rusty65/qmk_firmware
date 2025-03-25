@@ -32,6 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define QUICK_TAP_TERM 0
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 200
+#define TAPPING_TERM_PER_KEY
 
 // #undef RGBLIGHT_LED_COUNT
 // #define RGBLIGHT_EFFECT_BREATHING

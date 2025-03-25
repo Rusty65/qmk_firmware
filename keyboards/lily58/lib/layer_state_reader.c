@@ -4,7 +4,7 @@
 #define L_BASE 0
 #define L_SYMBOLS (1 << 1)
 #define L_NUMBERS (1 << 2)
-#define L_MOUSE (1 << 3)
+#define L_NAVIGATION (1 << 3)
 #define L_ADJUST (1 << 4)
 #define L_ADJUST_TRI (L_ADJUST | L_NUMBERS | L_SYMBOLS)
 
@@ -22,8 +22,8 @@ const char *read_layer_state(void) {
   case L_NUMBERS:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: NUMBERS");
     break;
-  case L_MOUSE:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: MOUSE");
+  case L_NAVIGATION:
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: NAVIGATION");
     break;
   case L_ADJUST:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: ADJUST");

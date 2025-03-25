@@ -1,7 +1,9 @@
+
 LTO_ENABLE = yes            # Link Time Optimization enabled
+TAP_DANCE_ENABLE = yes		#Allow tapping keys to do something
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
-MOUSEKEY_ENABLE = yes        # Mouse keys
-EXTRAKEY_ENABLE = yes        # Audio control and System control
+MOUSEKEY_ENABLE = no      	# Mouse keys
+EXTRAKEY_ENABLE = yes      	# Audio control and System control
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = no            # N-Key Rollover
@@ -10,8 +12,9 @@ AUDIO_ENABLE = no           # Audio output
 RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
 SWAP_HANDS_ENABLE = no      # Enable one-hand typing
 OLED_ENABLE = yes           # OLED display
-WPM_ENABLE = yes                # WPM counter
-EXTRAFLAGS += -flto             #Link time optimization - https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
+WPM_ENABLE = yes           	# WPM counter
+OS_DETECTION_ENABLE = yes	#OS dectection
+EXTRAFLAGS += -flto       	#Link time optimization - https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
 
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no    # Breathing sleep LED during USB suspend
