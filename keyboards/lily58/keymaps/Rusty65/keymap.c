@@ -158,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NAVIGATION] = LAYOUT( \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, \
-    _______, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, TO(_QWERTY),                 KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  XXXXXXX, \
+    _______, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, TG(_QWERTY),                 KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______, _______,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                _______, _______, _______,  _______, _______,  _______, _______, _______ \
   ),
@@ -185,9 +185,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-// layer_state_t layer_state_set_user(layer_state_t state) {
-//     return update_tri_layer_state(state, _SYMBOLS, _NUMBERS ,_ADJUST);
-//   }
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, _SYMBOLS, _NUMBERS ,_ADJUST);
+  }
 
 //SSD1306 OLED update loop, make sure to enable OLED_ENABLE=yes in rules.mk
 #ifdef OLED_ENABLE
@@ -202,8 +202,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #    define TAP_SPEED 40  // above this wpm value typing animation to trigger
 
 #    define ANIM_FRAME_DURATION 200  // how long each frame lasts in ms
-// #define SLEEP_TIMER 60000 // should sleep after this period of 0 wpm, needs fixing
-#    define ANIM_SIZE 636  // number of bytes in array, minimize for adequate firmware size, max is 1024
+ #define SLEEP_TIMER 60000 // should sleep after this period of 0 wpm, needs fixing
+#    define ANIM_SIZE 636  // number of bytes in array, minimize for adequate firmware sizge, max is 1024
 
 uint32_t anim_timer         = 0;
 uint32_t anim_sleep         = 0;
