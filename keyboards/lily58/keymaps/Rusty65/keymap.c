@@ -190,7 +190,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 //SSD1306 OLED update loop, make sure to enable OLED_ENABLE=yes in rules.mk
-//#ifdef OLED_ENABLE
+#ifdef OLED_ENABLE
 
 // WPM-responsive animation stuff here
 #    define IDLE_FRAMES 5
@@ -327,7 +327,7 @@ bool oled_task_user(void) {
   }
     return false;
 }
-//#endif // OLED_ENABLE
+#endif // OLED_ENABLE
 
 // bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //   if (record->event.pressed) {
