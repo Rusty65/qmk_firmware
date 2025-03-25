@@ -28,7 +28,7 @@ enum {
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
-    [TD_G_NAV] = ACTION_TAP_DANCE_LAYER_MOVE(KC_G, _NAVIGATION),
+    [TD_G_NAV] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_G, _NAVIGATION),
 };
 
 // Macro Definitions
@@ -158,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NAVIGATION] = LAYOUT( \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-    _______, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, TO(_QWERTY),                 XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, \
+    _______, KC_LSFT, KC_LALT, KC_LGUI, KC_LCTL, TG(_QWERTY),                 XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, XXXXXXX, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______, _______,  KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  XXXXXXX, \
                                _______, _______, _______,  _______, _______,  _______, _______, _______ \
   ),
@@ -303,7 +303,7 @@ const char *read_layer_state(void);
 //const char *read_keylogs(void);
 
 const char *read_mode_icon(bool swap);
-const char *read_host_led_state(void);
+// const char *read_host_led_state(void);
 // void set_timelog(void);
 // const char *read_timelog(void);
 
@@ -314,7 +314,7 @@ bool oled_task_user(void) {
     //oled_write_ln(read_keylog(), false);
     //oled_write_ln(read_keylogs(), false);
     oled_write_ln(read_mode_icon(keymap_config.swap_lctl_lgui), false); //Show the Apple or windows icon based on the ctrl/gui swap
-    oled_write_ln(read_host_led_state(), false);
+    //oled_write_ln(read_host_led_state(), false);
     //oled_write_ln(read_timelog(), false);
   } else {
     //oled_write(read_logo(), false);
