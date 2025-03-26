@@ -4,12 +4,7 @@
 /* Variable to store WPM */
 char wpm_str[10];
 
-/* Dynamic copy/paste/cut based on cgswap status*/
-// enum custom_keycodes {
-//     FCOPY = SAFE_RANGE,
-//     FPASTE,
-//     FCUT
-// };
+
 
 enum layer_number {
   _QWERTY = 0,
@@ -32,47 +27,31 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_VOLU_NX] = ACTION_TAP_DANCE_DOUBLE(KC_VOLU, KC_MNXT),
     [TD_VOLD_PV] = ACTION_TAP_DANCE_DOUBLE(KC_VOLD, KC_MPRV),
 };
-
-// // Macro Definitions
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
-//     case FCOPY:
-//         if (record->event.pressed) {
-//             // when keycode QMKBEST is pressed
-//             if (keymap_config.swap_lctl_lgui){
-//                 SEND_STRING(SS_LGUI("c")); // GUI-V
-//             } else {
-//                 SEND_STRING(SS_LCTL("c")); // Ctrl-V
-//             }
-//         } else {
-//             // when keycode QMKBEST is released
-//         }
-//         break;
-
-//     case FPASTE:
-//         if (record->event.pressed) {
-//             if (keymap_config.swap_lctl_lgui){
-//                 SEND_STRING(SS_LGUI("v")); // GUI-V
-//             } else {
-//                 SEND_STRING(SS_LCTL("v")); // Ctrl-V
-//             }
-//         } else {
-//             // when keycode QMKURL is released
-//         }
-//         break;
-
-//     case FCUT:
-//         if (record->event.pressed) {
-//             if (keymap_config.swap_lctl_lgui){
-//                 SEND_STRING(SS_LGUI("x")); // GUI-X
-//             } else {
-//                 SEND_STRING(SS_LCTL("x")); // Ctrl-X
-//             }
-//         }
-//         break;
-//     }
-//     return true;
-// };
+/* Dynamic copy/paste/cut based on cgswap status*/
+enum custom_keycodes {
+    RSQBRKT = SAFE_RANGE,
+    LSQBRKT,
+};
+// Macro Definitions
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case RSQBRKT:
+        if (record->event.pressed) {
+            SEND_STRING("]");
+        } else {
+        // when keycode QMKBEST is released
+         }
+        break;
+        case LSQBRKT:
+        if (record->event.pressed) {
+            SEND_STRING("[");
+         } else {
+        // when keycode QMKBEST is released
+        }
+        break;
+    }
+    return true;
+};
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -96,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_HOME,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_END, \
     KC_GRV,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_MINS, \
     LCTL_T(KC_ESC), LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LT(_NAVIGATION,KC_G),   KC_H, RCTL_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), RSFT_T(KC_SCLN), KC_QUOT, \
-    LSFT_T(KC_BSLS),    KC_Z,       KC_X,       KC_C,       KC_V,   KC_B,       TD(TD_VOLD_PV),    TD(TD_VOLU_NX),    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_PLUS, \
+    LSFT_T(KC_BSLS),    KC_Z,       KC_X,       KC_C,       KC_V,   KC_B,       TD(TD_VOLD_PV),    TD(TD_VOLU_NX),    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_EQL, \
                                         KC_UP,      KC_DOWN,    MO(_SYMBOLS),LT(_NUMBERS,KC_TAB),LT(_SYMBOLS,KC_SPC),MO(_NUMBERS),KC_LEFT,    KC_RGHT
 ),
 /* SYMBOLS
@@ -115,18 +94,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_SYMBOLS] = LAYOUT( \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LCBR,    KC_RCBR,    XXXXXXX, \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    LSQBRKT,    RSQBRKT,    XXXXXXX, \
     XXXXXXX,    KC_EXLM,    KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,                            KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RPRN,    KC_TILD, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_DEL,     KC_MPLY,    XXXXXXX,    XXXXXXX,    XXXXXXX,    LSFT(KC_LCBR),    LSFT(KC_RCBR),    XXXXXXX, \
+    KC_LSFT,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_DEL,     KC_MPLY,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LCBR,    KC_RCBR,    XXXXXXX, \
                                         _______,    _______,    _______,    KC_BSPC,    _______,    _______,    _______,    _______
 ),
 /* NUMBERS
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |      |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |   1  |   2  |   3  |   4  |   5  |-------.    ,-------|   6  |   7  |   8  |   9  |   0  |      |
+ * |      |      |      |      |      |      |-------.    ,-------| LEFT | DOWN |   UP | RIGHT|      |      |
  * |------+------+------+------+------+------|       |    | MUTE  |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -137,9 +116,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  [_NUMBERS] = LAYOUT( \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX, \
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______,  KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX, \
+    KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______,  KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                _______, _______, _______,  _______,  KC_ENT,  _______, _______, _______ \
   ),
   /* NAVIGATION
@@ -148,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
    * |      |      |      |      |      |      |                    | HOME | PGDN | PGUP |  END |      |      |
    * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-   * |      | SHIFT|  GUI |  ALT | CTRL |      |-------.    ,-------| LEFT | DOWN |   UP | RIGHT|   |      |
+   * |      | SHIFT|  GUI |  ALT | CTRL |      |-------.    ,-------| LEFT | DOWN |   UP | RIGHT|      |      |
    * |------+------+------+------+------+------|       |    | LOCK  |------+------+------+------+------+------|
    * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
    * `-----------------------------------------/       /     \      \-----------------------------------------'
