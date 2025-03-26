@@ -31,6 +31,8 @@ tap_dance_action_t tap_dance_actions[] = {
 enum custom_keycodes {
     RSQBRKT = SAFE_RANGE,
     LSQBRKT,
+    PIPE,
+    BSLS,
 };
 // Macro Definitions
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -45,6 +47,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case LSQBRKT:
         if (record->event.pressed) {
             SEND_STRING("[");
+         } else {
+        // when keycode QMKBEST is released
+        }
+        break;
+        case PIPE:
+        if (record->event.pressed) {
+            SEND_STRING("|");
+         } else {
+        // when keycode QMKBEST is released
+        }
+        break;
+        case BSLS:
+        if (record->event.pressed) {
+            SEND_STRING("\\");
          } else {
         // when keycode QMKBEST is released
         }
@@ -64,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |ESC/ctl|A/shft|S/gui |D/alt |F/ctrl|G/NAV|-------.    ,-------|   H  |J/ctrl|K/alt |L/gui |;/shft|  '   |
  * |------+------+------+------+------+------| Vol-  |    | Vol+  |------+------+------+------+------+------|
- * | \/shf|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |  +   |
+ * | LSHFT|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |  +   |
  * `-----------------------------------------/NUMBERS/     \SYMBOLS\-----------------------------------------'
  *                  |  Up  | Down |SYMBOLS| /|Tab   /       \|Space \  |NUMBERS| Left | Right|
  *                  |      |      |       |/       /         \       \ |       |      |      |
@@ -75,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_HOME,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,                               KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_END, \
     KC_GRV,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,                               KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_MINS, \
     LCTL_T(KC_ESC), LSFT_T(KC_A), LGUI_T(KC_S), LALT_T(KC_D), LCTL_T(KC_F), LT(_NAVIGATION,KC_G),   KC_H, RCTL_T(KC_J), RALT_T(KC_K), RGUI_T(KC_L), RSFT_T(KC_SCLN), KC_QUOT, \
-    LSFT_T(KC_BSLS),    KC_Z,       KC_X,       KC_C,       KC_V,   KC_B,       TD(TD_VOLD_PV),    TD(TD_VOLU_NX),    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_EQL, \
+    KC_LSFT,    KC_Z,       KC_X,       KC_C,       KC_V,   KC_B,       TD(TD_VOLD_PV),    TD(TD_VOLU_NX),    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_EQL, \
                                         KC_UP,      KC_DOWN,    MO(_SYMBOLS),LT(_NUMBERS,KC_TAB),LT(_SYMBOLS,KC_SPC),MO(_NUMBERS),KC_LEFT,    KC_RGHT
 ),
 /* SYMBOLS
@@ -96,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    XXXXXXX,    LSQBRKT,    RSQBRKT,    XXXXXXX, \
     XXXXXXX,    KC_EXLM,    KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,                            KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LPRN,    KC_RPRN,    KC_TILD, \
-    KC_LSFT,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_DEL,     KC_MPLY,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LCBR,    KC_RCBR,    XXXXXXX, \
+    BSLS,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_DEL,     KC_MPLY,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LCBR,    KC_RCBR,    XXXXXXX, \
                                         _______,    _______,    _______,    KC_BSPC,    _______,    _______,    _______,    _______
 ),
 /* NUMBERS
@@ -118,7 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX, \
-    KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______,  KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    PIPE,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______,  KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                _______, _______, _______,  _______,  KC_ENT,  _______, _______, _______ \
   ),
   /* NAVIGATION
@@ -140,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, XXXXXXX, \
     _______, KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, _______,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX, \
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______, QK_LLCK,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
+    KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______, QK_LLCK,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
                                _______, _______, _______,  _______, _______,  _______, _______, _______ \
   ),
 /* ADJUST
