@@ -45,7 +45,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define WPM_SAMPLE_SECONDS	5
 //#define WPM_SAMPLE_PERIODS	25
 
-
+//caps word config
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
 // #undef RGBLIGHT_LED_COUNT
 // #define RGBLIGHT_EFFECT_BREATHING

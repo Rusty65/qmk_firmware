@@ -2,6 +2,7 @@
 LTO_ENABLE = yes            # Link Time Optimization enabled
 TRI_LAYER_ENABLE = yes		# Enable tri layers
 LAYER_LOCK_ENABLE = yes		# enable locking layers
+CAPS_WORD_ENABLE = yes		# enable cpas word
 TAP_DANCE_ENABLE = yes		#Allow tapping keys to do something
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = no      	# Mouse keys
