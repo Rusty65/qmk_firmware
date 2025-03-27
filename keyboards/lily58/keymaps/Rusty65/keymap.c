@@ -276,14 +276,7 @@ static void render_anim(void) {
 }
 
 
-//Adding some code to output CAPS_WORD notification
-// void caps_word_set_user(bool active) {
-//     if (active) {
-//         oled_write("CAPS-WORD: On ",false);
-//     } else {
-//         oled_write("CAPS-WORD: Off",false);
-//     }
-// }
+
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   if (!is_keyboard_master())
@@ -299,7 +292,7 @@ const char *read_layer_state(void);
 //const char *read_keylogs(void);
 
 const char *read_mode_icon(bool swap);
-const char *read_host_led_state(void);
+//const char *read_host_led_state(void);
 // void set_timelog(void);
 // const char *read_timelog(void);
 
@@ -310,10 +303,17 @@ bool oled_task_user(void) {
     //oled_write_ln(read_keylog(), false);
     //oled_write_ln(read_keylogs(), false);
     oled_write_ln(read_mode_icon(keymap_config.swap_lctl_lgui), false); //Show the Apple or windows icon based on the ctrl/gui swap
-    oled_write_ln(read_host_led_state(), false);
+    //oled_write_ln(read_host_led_state(), false);
     //oled_write_ln(read_timelog(), false);
     //oled_write("WPM: ",false);
-    oled_write(get_u8_str(get_current_wpm(), '0'), false);
+    //oled_write(get_u8_str(get_current_wpm(), '0'), false);
+    //Adding some code to output CAPS_WORD notification
+
+    if (is_caps_word_on()) {
+        oled_write("CAPS-WORD: On ",false);
+    } else {
+        oled_write("CAPS-WORD: Off",false);
+    }
   } else {
     //oled_write(read_logo(), false);
     //oled_write(read_logo(), false);
