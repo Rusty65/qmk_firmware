@@ -312,7 +312,7 @@ bool oled_task_user(void) {
     oled_write_ln(read_mode_icon(keymap_config.swap_lctl_lgui), false); //Show the Apple or windows icon based on the ctrl/gui swap
     oled_write_ln(read_host_led_state(), false);
     //oled_write_ln(read_timelog(), false);
-    oled_write("WPM: ",false);
+    //oled_write("WPM: ",false);
     oled_write(get_u8_str(get_current_wpm(), '0'), false);
   } else {
     //oled_write(read_logo(), false);
