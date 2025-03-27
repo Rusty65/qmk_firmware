@@ -45,7 +45,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define WPM_SAMPLE_SECONDS	5
 //#define WPM_SAMPLE_PERIODS	25
 
-
+//pointing device specific config
+#define SPLIT_POINTING_ENABLE
+#define POINTING_DEVICE_COMBINED
+#define CIRQUE_PINNACLE_DIAMETER_MM 35
+#define CIRQUE_PINNACLE_CURVED_OVERLAY
+#define POINTING_DEVICE_GESTURES_SCROLL_ENABLE
 
 // #undef RGBLIGHT_LED_COUNT
 // #define RGBLIGHT_EFFECT_BREATHING

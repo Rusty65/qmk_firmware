@@ -1,5 +1,9 @@
 
 LTO_ENABLE = yes            # Link Time Optimization enabled
+
+POINTING_DEVICE_ENABLE = yes
+POINTING_DEVICE_DRIVER = cirque_pinnacle_i2c
+
 TRI_LAYER_ENABLE = yes		# Enable tri layers
 LAYER_LOCK_ENABLE = yes		# enable locking layers
 TAP_DANCE_ENABLE = yes		#Allow tapping keys to do something
