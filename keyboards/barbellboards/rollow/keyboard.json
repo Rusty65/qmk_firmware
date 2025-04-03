@@ -25,9 +25,9 @@
 	"encoder": {
 		"rotary": [
 			{
-				"pin_a": "B4", 
+				"pin_a": "B4",
 				"pin_b": "B5",
-				"resolution": 2
+				"resolution": 4
 			}
 		]
 	},
@@ -36,10 +36,10 @@
 		"soft_serial_pin": "D2",
 		"encoder": {
 			"right": {
-				"rotary": [ 
-					{ 
-						"pin_a": "B2", 
-						"pin_b": "B6", 
+				"rotary": [
+					{
+						"pin_a": "B2",
+						"pin_b": "B6",
 						"resolution": 2
 					}
 				]

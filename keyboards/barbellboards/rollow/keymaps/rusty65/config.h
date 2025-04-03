@@ -2,6 +2,11 @@
 
 #define MASTER_LEFT
 #ifdef CONVERT_TO_KB2040
+
+//Encoder blips per detent|
+//#define ENCODER_RESOLUTION 4
+
+
 //Tri layer definitions
 #define TRI_LAYER_LOWER_LAYER 1
 #define TRI_LAYER_UPPER_LAYER 2
