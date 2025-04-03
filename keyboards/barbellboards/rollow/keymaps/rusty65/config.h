@@ -6,6 +6,20 @@
 //Encoder blips per detent|
 //#define ENCODER_RESOLUTION 4
 
+//Cirque touchpad settings
+#define CIRQUE_PINNACLE_DIAMETER_MM 35
+#define CIRQUE_PINNACLE_CURVED_OVERLAY
+#define CIRQUE_PINNACLE_ADDR 0x2A
+#define POINTING_DEVICE_GESTURES_SCROLL_ENABLE //enable circular scroll
+#define POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE //cursor glide
+#define CIRQUE_PINNACLE_TAP_ENABLE //tap to left click
+
+//Split Keyboard data sync
+#define SPLIT_TRANSPORT_MIRROR
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_POINTING_ENABLE
+#define POINTING_DEVICE_RIGHT
+
 
 //Tri layer definitions
 #define TRI_LAYER_LOWER_LAYER 1
