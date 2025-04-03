@@ -2,13 +2,28 @@
 
 #define MASTER_LEFT
 #ifdef CONVERT_TO_KB2040
-#define WS2812_DI_PIN GP14 // this is your rgb_matrix.
+//Tri layer definitions
+#define TRI_LAYER_LOWER_LAYER 1
+#define TRI_LAYER_UPPER_LAYER 2
+#define TRI_LAYER_ADJUST_LAYER 4
+
+//caps word config
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+#define TAPPING_FORCE_HOLD
+#define TAPPING_TERM 250
+#define TAPPING_TERM_PER_KEY
+
+#define WS2812_DI_PIN GP17 // this is your rgb_matrix.
 #define CUSTOM_DI_PIN GP23 // use rgblight
+
+#define RGBLIGHT_LED_COUNT 1
+
 // set the same as your RGBLED_NUM, whichever is higher.
-#define CUSTOM_LED_COUNT 1
-#define RGBLED_NUM 1
+//#define CUSTOM_LED_COUNT 1
+//#define RGBLED_NUM 1
 // Target first led (built-in ws2812). No effect on RGB_MATRIX
-#define RGBLIGHT_LED_MAP { 0 }
+//#define RGBLIGHT_LED_MAP { 0 }
 
 
 /* #define RGB_DI_PIN GP14 replaced by below */
