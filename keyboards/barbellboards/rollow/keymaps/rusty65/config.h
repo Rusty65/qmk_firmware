@@ -14,7 +14,7 @@
 #define CIRQUE_PINNACLE_ADDR 0x2A
 #define POINTING_DEVICE_GESTURES_SCROLL_ENABLE //enable circular scroll
 #define POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE //cursor glide
-// #define CIRQUE_PINNACLE_TAP_ENABLE //tap to left click
+#define CIRQUE_PINNACLE_TAP_ENABLE //tap to left click
 
 // Haptics
 #define DRV2605L_FB_ERM_LRA 1
