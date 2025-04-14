@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, _______, _______,    _______, _______, XXXXXXX
+                                          XXXXXXX, _______, _______,    _______, _______, HF_TOGG
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -151,7 +151,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
   [_SYMBOLS] = { ENCODER_CCW_CW(KC_UP,   KC_DOWN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
   [_NUMBERS] = { ENCODER_CCW_CW(KC_UP,   KC_DOWN), ENCODER_CCW_CW(KC_MPRV, KC_MNXT)  },
   [_NAVIGATION] = { ENCODER_CCW_CW(KC_UP,   KC_DOWN), ENCODER_CCW_CW(KC_RGHT, KC_LEFT)  },
-  [_ADJUST] = { ENCODER_CCW_CW(XXXXXXX, XXXXXXX), ENCODER_CCW_CW(XXXXXXX, XXXXXXX)  }
+  [_ADJUST] = { ENCODER_CCW_CW(HF_COND, HF_CONU), ENCODER_CCW_CW(HF_PREV, HF_NEXT)  }
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
