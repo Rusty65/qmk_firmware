@@ -15,6 +15,9 @@
 #define POINTING_DEVICE_GESTURES_SCROLL_ENABLE //enable circular scroll
 #define POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE //cursor glide
 #define CIRQUE_PINNACLE_TAP_ENABLE //tap to left click
+#define CIRQUE_PINNACLE_SECONDARY_TAP_ENABLE //enable right click in top right corner with half a finger tip
+#define CIRQUE_PINNACLE_ATTENUATION EXTREG__TRACK_ADCCONFIG__ADC_ATTENUATE_2X //attenuation ammounts for the trackpad, default is 4x, curved recommends 2x
+
 
 // Haptics
 #define DRV2605L_FB_ERM_LRA 1
@@ -30,9 +33,11 @@
 //#define DRV2605L_V_PEAK 2.1
 #define DRV2605L_F_LRA 150 /* resonance freq */
 
-#define DRV2605L_GREETING 113
-#define DRV2605L_DEFAULT_MODE 47
-
+#define DRV2605L_GREETING 94
+#define DRV2605L_DEFAULT_MODE 9
+#define NO_HAPTIC_ALPHA
+#define NO_HAPTIC_PUNCTUATION
+#define NO_HAPTIC_NAV
 
 //Split Keyboard data sync
 #define SPLIT_TRANSPORT_MIRROR
