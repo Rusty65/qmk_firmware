@@ -163,7 +163,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            XXXXXXX, _______, MS_BTN1,    XXXXXXX, _______, XXXXXXX
+                                          MS_BTN1, _______, MS_BTN1,    XXXXXXX, _______, XXXXXXX
                                       //`--------------------------'  `--------------------------'
     ),
 
