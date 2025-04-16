@@ -18,6 +18,8 @@
 #define CIRQUE_PINNACLE_SECONDARY_TAP_ENABLE //enable right click in top right corner with half a finger tip
 #define CIRQUE_PINNACLE_ATTENUATION EXTREG__TRACK_ADCCONFIG__ADC_ATTENUATE_2X //attenuation ammounts for the trackpad, default is 4x, curved recommends 2x
 
+#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#define AUTO_MOUSE_DEFAULT_LAYER 5
 
 // Haptics
 #define DRV2605L_FB_ERM_LRA 1
@@ -51,15 +53,19 @@
 
 
 //Tri layer definitions
-#define TRI_LAYER_LOWER_LAYER 1
-#define TRI_LAYER_UPPER_LAYER 2
-#define TRI_LAYER_ADJUST_LAYER 4
+#define TRI_LAYER_LOWER_LAYER 2
+#define TRI_LAYER_UPPER_LAYER 3
+#define TRI_LAYER_ADJUST_LAYER 5
 
 //caps word config
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 
-#define TAPPING_FORCE_HOLD
-#define TAPPING_TERM 250
+
+//#define TAPPING_FORCE_HOLD //
+
+#define PERMISSIVE_HOLD //mod tap key needs to be held as other key is pressed and released
+//#define HOLD_ON_OTHER_KEY_PRESS //mod tap key activates if you press another key regardless of if it's released before the mod key
+#define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
 
 // #define WS2812_DI_PIN GP17 // this is your rgb_matrix.
