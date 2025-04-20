@@ -1,7 +1,7 @@
 #pragma once
 
 #define MASTER_LEFT
-//#ifdef CONVERT_TO_KB2040
+#define ENABLE_COMPILE_KEYCODE
 
 //Encoder blips per detent|
 //#define ENCODER_RESOLUTION 4
