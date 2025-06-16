@@ -12,9 +12,9 @@
 #define CIRQUE_PINNACLE_DIAMETER_MM 35
 #define CIRQUE_PINNACLE_CURVED_OVERLAY
 #define CIRQUE_PINNACLE_ADDR 0x2A
-#define POINTING_DEVICE_GESTURES_SCROLL_ENABLE //enable circular scroll
+//#define POINTING_DEVICE_GESTURES_SCROLL_ENABLE //enable circular scroll
 #define POINTING_DEVICE_GESTURES_CURSOR_GLIDE_ENABLE //cursor glide
-#define CIRQUE_PINNACLE_TAP_ENABLE //tap to left click
+//#define CIRQUE_PINNACLE_TAP_ENABLE //tap to left click
 //#define CIRQUE_PINNACLE_SECONDARY_TAP_ENABLE //enable right click in top right corner with half a finger tip
 #define CIRQUE_PINNACLE_ATTENUATION EXTREG__TRACK_ADCCONFIG__ADC_ATTENUATE_3X //attenuation ammounts for the trackpad, default is 4x, curved recommends 2x
 

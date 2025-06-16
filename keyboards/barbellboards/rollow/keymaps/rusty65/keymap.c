@@ -207,10 +207,10 @@ static void oled_render_layer_state(void) {
             oled_write_ln_P(PSTR("Gaming"), false);
             break;
         case 2:
-            oled_write_ln_P(PSTR("Symbols"), false);
+            oled_write_ln_P(PSTR("Numbers"), false);
             break;
         case 3:
-            oled_write_ln_P(PSTR("Numbers"), false);
+            oled_write_ln_P(PSTR("Symbols"), false);
             break;
         case 4:
             oled_write_ln_P(PSTR("Navigation"), false);
